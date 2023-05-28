@@ -8,11 +8,9 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index()
+    public  function index()
     {
-        $train = Train::table()
-                        ->orderBy('orario_di_partenza', 'asc')
-                        ->get();
-        return view('home', compact('train'));
+        $trains = Train::all();
+        return view('home', compact('trains'));
     }
 }
